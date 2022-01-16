@@ -1,0 +1,63 @@
+{
+	"months": [{
+			"name": "January",
+			"message": "Valid for a feast at Indian Aroma",
+			"image": "indian-feast.jpg"
+		},
+		{
+			"name": "February",
+			"message": "febtext",
+			"image": "test.jpg"
+		},
+		{
+			"name": "March",
+			"message": "martext",
+			"image": "test.jpg"
+		},
+		{
+			"name": "April",
+			"message": "aprtext",
+			"image": "test.jpg"
+		},
+		{
+			"name": "May",
+			"message": "maytext",
+			"image": "test.jpg"
+		},
+		{
+			"name": "June",
+			"message": "juntext",
+			"image": "test.jpg"
+		},
+		{
+			"name": "July",
+			"message": "jultext",
+			"image": "test.jpg"
+		},
+		{
+			"name": "August",
+			"message": "augtext",
+			"image": "test.jpg"
+		},
+		{
+			"name": "September",
+			"message": "septext",
+			"image": "test.jpg"
+		},
+		{
+			"name": "October",
+			"message": "octtext",
+			"image": "test.jpg"
+		},
+		{
+			"name": "November",
+			"message": "novtext",
+			"image": "test.jpg"
+		},
+		{
+			"name": "December",
+			"message": "dectext",
+			"image": "test.jpg"
+		}
+	]
+}

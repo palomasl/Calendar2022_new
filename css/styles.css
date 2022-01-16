@@ -1,0 +1,97 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+	font-size: 16px;
+	color: #fff;
+	background: #000;
+  background-image: url(../images/website_bg.jpg);
+  background-size: cover;
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 60px; /* Margin bottom by footer height */
+}
+
+h1 {
+	text-align: center;
+  font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+/* Card styles
+-------------------------------------------------- */
+button {
+  background-color: transparent;
+  width: 120px;
+  height: 120px;
+}
+
+.card_doorJan, .card_doorFeb,
+.card_doorMar, .card_doorApr,
+.card_doorMay, .card_doorJun,
+.card_doorJul, .card_doorAug,
+.card_doorSep, .card_doorOct,
+.card_doorNov, .card_doorDec {
+  box-shadow: 2px 2px 5px #fff;
+  border-color: 5px solid #fff;
+  filter: brightness(90%);
+  width: 110%;
+  height: 100%;
+  margin-left: -8px;
+  margin-top: -1px;
+  background-color: #363636;
+  transform: rotateY(10deg);
+}
+
+.month {
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  width: 93px; 
+  margin-left: 10px;
+}
+
+/* Popup styles
+-------------------------------------------------- */
+/* The PopUp (background) */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #fff; /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  color: #000;
+}
+
+/* PopUp Content/Box */
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+  font-size: 12px;
+  font-style: italic;
+}
+
