@@ -28,12 +28,7 @@ button {
   height: 120px;
 }
 
-.card_doorJan, .card_doorFeb,
-.card_doorMar, .card_doorApr,
-.card_doorMay, .card_doorJun,
-.card_doorJul, .card_doorAug,
-.card_doorSep, .card_doorOct,
-.card_doorNov, .card_doorDec {
+.card {
   box-shadow: 2px 2px 5px #fff;
   border-color: 5px solid #fff;
   filter: brightness(90%);
