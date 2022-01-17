@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded",
                                 doors += "</section>" + "<br>" + "<section class=\"row\">"
                             }
                             doors += "<div class=\"col-12 col-sm-4\">" +
-                                "<button>" +
+                                "<button style=\"background-image: url('./images/" + months.months[i].image + "');\">" +
                                 "<div class=\"door\">" +
                                 "<div class=\"month\">" +
                                 months.months[i].name +
