@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-//Load JSON
+//Create doors
 document.addEventListener("DOMContentLoaded",
         function() {
             $ajaxUtils
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded",
                             }
                             doors += "<div class=\"col-12 col-sm-4\">" +
                                 "<button style=\"background-image: url('./images/" + months.months[i].image + "');\">" +
-                                "<div class=\"door\">" +
+                                "<div id=\"open\" class=\"door\">" +
                                 "<div class=\"month\">" +
                                 months.months[i].name +
                                 "</div>" +
@@ -30,7 +30,22 @@ document.addEventListener("DOMContentLoaded",
                                 doors += "</section>"
                             }
                         }
-                        console.log(doors);
                         $("#doors").html(doors);
                     })
                 });
+//-- END-Create doors
+
+//Open doors
+document.addEventListener("DOMContentLoaded",
+        function() {
+            $ajaxUtils
+                .sendGetRequest("data/months.json",
+                    function(opendoor) {
+                        document.addEventListener('mouseover',function(e){
+    if(e.target && e.target.id== 'open'){
+          console.log("hello");
+     }
+ });
+                    });
+                });
+//-- END-Open doors
