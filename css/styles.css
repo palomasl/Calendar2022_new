@@ -28,7 +28,7 @@ button {
   height: 120px;
 }
 
-.card {
+.door {
   box-shadow: 2px 2px 5px #fff;
   border-color: 5px solid #fff;
   filter: brightness(90%);
