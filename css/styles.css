@@ -40,6 +40,19 @@ button {
   transform: rotateY(10deg);
 }
 
+.opendoor {
+  box-shadow: none;
+  border-color: "5px solid #363636";
+  filter: brightness(90%);
+  width: 110%;
+  height: 100%;
+  margin-left: -8px;
+  margin-top: -1px;
+  background-color: #363636;
+  transform: perspective(1000px) translateX(-70px) rotateY(-100deg);
+
+}
+
 .month {
   background-color: transparent;
   color: white;

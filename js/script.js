@@ -41,16 +41,15 @@ var openDoor = function(){
     var curmonth = curdate.toLocaleString('en-US', {month: 'long'});
     var doormonth = event.target.innerText;
     if(curmonth == doormonth){
-    $(event.target).css("transform","perspective(1000px) translateX(-70px) rotateY(-100deg)"); 
-    $(event.target).css("boxShadow", "none");
-    $(event.target).css("borderColor", "5px solid #363636");
+    $(event.target).removeClass("door"); 
+    $(event.target).addClass("opendoor"); 
 }};
 //-- END-Open doors
 
 //Close doors
 var closeDoor = function(){
-    $(event.target).children().css("transform","perspective(0px) translateX(0px) rotateY(0deg)"); 
-    $(event.target).children().css("boxShadow", "2px 2px 5px #fff");
-    $(event.target).children().css("borderColor", "5px solid #fff");
+    $(event.target).children().removeClass("opendoor"); 
+    $(event.target).children().addClass("door"); 
+
 };
 //-- END-Close doors
