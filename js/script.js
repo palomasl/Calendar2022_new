@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded",
         function() {
             $ajaxUtils
                 .sendGetRequest("data/months.json",
-                    function(months) {
+                    function(createdoors) {
                         var doors = "";
-                        for (var i = 0; i < months.months.length; i++) {
+                        for (var i = 0; i < createdoors.months.length; i++) {
                             if (i == 0) {
                                 doors += "<section class=\"row\">"
                             }
@@ -18,10 +18,10 @@ document.addEventListener("DOMContentLoaded",
                                 doors += "</section>" + "<br>" + "<section class=\"row\">"
                             }
                             doors += "<div class=\"col-12 col-sm-4\">" +
-                                "<button style=\"background-image: url('./images/" + months.months[i].image + "');\">" +
-                                "<div id=\"open\" class=\"door\">" +
+                                "<button style=\"background-image: url('./images/" + createdoors.months[i].image + "');\">" +
+                                "<div class=\"door\">" +
                                 "<div class=\"month\">" +
-                                months.months[i].name +
+                                createdoors.months[i].name +
                                 "</div>" +
                                 "</div>" +
                                 "</button>" +
@@ -35,17 +35,28 @@ document.addEventListener("DOMContentLoaded",
                 });
 //-- END-Create doors
 
+
+
 //Open doors
 document.addEventListener("DOMContentLoaded",
         function() {
             $ajaxUtils
                 .sendGetRequest("data/months.json",
-                    function(opendoor) {
-                        document.addEventListener('mouseover',function(e){
-    if(e.target && e.target.id== 'open'){
-          console.log("hello");
+                    function(openDoor) {
+                        document.addEventListener('mouseover',function(){
+                        var curdate = new Date();
+                        var curmonth = curdate.toLocaleString('en-US', {month: 'long'});
+                        var doormonth = event.target.innerText;
+                        //var door = document.getElementsByClassName("door");
+                        if(curmonth == doormonth){
+                        console.log("works")
+                        //door.style.transform = "perspective(1000px) translateX(-70px) rotateY(-100deg)"; 
+                        //door.style.boxShadow = "none";
+                        //door.style.borderColor = "5px solid #363636";
+
      }
  });
                     });
                 });
 //-- END-Open doors
+
