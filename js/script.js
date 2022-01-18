@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded",
                                 doors += "</section>" + "<br>" + "<section class=\"row\">"
                             }
                             doors += "<div class=\"col-12 col-sm-4\">" +
-                                "<button style=\"background-image: url('./images/" + createdoors.months[i].image + "');\">" +
-                                "<div class=\"door\">" +
+                                "<button style=\"background-image: url('./images/" + createdoors.months[i].image + "'); background-size: cover\">" +
+                                "<div class=\"door\" onmouseenter=\"openDoor()\" onmouseleave=\"closeDoor()\">" +
                                 "<div class=\"month\">" +
                                 createdoors.months[i].name +
                                 "</div>" +
@@ -35,28 +35,14 @@ document.addEventListener("DOMContentLoaded",
                 });
 //-- END-Create doors
 
-
-
 //Open doors
-document.addEventListener("DOMContentLoaded",
-        function() {
-            $ajaxUtils
-                .sendGetRequest("data/months.json",
-                    function(openDoor) {
-                        document.addEventListener('mouseover',function(){
-                        var curdate = new Date();
-                        var curmonth = curdate.toLocaleString('en-US', {month: 'long'});
-                        var doormonth = event.target.innerText;
-                        //var door = document.getElementsByClassName("door");
-                        if(curmonth == doormonth){
-                        console.log("works")
-                        //door.style.transform = "perspective(1000px) translateX(-70px) rotateY(-100deg)"; 
-                        //door.style.boxShadow = "none";
-                        //door.style.borderColor = "5px solid #363636";
-
-     }
- });
-                    });
-                });
+var openDoor = function(){
+    var curdate = new Date();
+    var curmonth = curdate.toLocaleString('en-US', {month: 'long'});
+    var doormonth = event.target.innerText;
+    if(curmonth == doormonth){
+    event.target.style.transform = "perspective(1000px) translateX(-70px) rotateY(-100deg)"; 
+    event.target.style.boxShadow = "none";
+    event.target.style.borderColor = "5px solid #363636";
+}};
 //-- END-Open doors
-
