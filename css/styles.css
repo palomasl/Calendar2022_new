@@ -63,32 +63,31 @@ button {
 
 /* Popup styles
 -------------------------------------------------- */
-/* The PopUp (background) */
+/* The PopUp*/
 .popup {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
+  position: fixed;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #fff; /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  color: #000;
-}
-
-/* PopUp Content/Box */
-.popup-content {
+  overflow: auto;
   background-color: #fefefe;
+  color: #000;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
-
-
+/*Close button*/
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:focus, .close:hover {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */

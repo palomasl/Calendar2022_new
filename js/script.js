@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded",
                                 doors += "</section>" + "<br>" + "<section class=\"row\">"
                             }
                             doors += "<div class=\"col-12 col-sm-4\">" +
-                                "<button onmouseleave=\"closeDoor()\" style=\"background-image: url('./images/" + createdoors.months[i].image + "'); background-size: cover\">" +
+                                "<button onclick=\"createpopup()\" onmouseleave=\"closeDoor()\" style=\"background-image: url('./images/" + createdoors.months[i].image + "'); background-size: cover\">" +
                                 "<div class=\"door\" onmouseenter=\"openDoor()\">" +
                                 "<div class=\"month\">" +
                                 createdoors.months[i].name +
@@ -53,3 +53,26 @@ var closeDoor = function(){
 
 };
 //-- END-Close doors
+
+//Generate popup windows
+var createpopup = function() {
+    var popup = 
+    "<div class=\"popup\">" +
+    "<span onclick=\"closepopup()\" class=\"close\">&times;</span>" +
+    "<p>" +
+    "insert message" +
+    "</p>" +
+    "<p style=\"font-style: italic; font-size: 8px\">" +
+    "Expires end of " +
+    event.target.innerText +
+    "</p>" +
+    "</div>";
+    $("#popups").append(popup); 
+}
+//-- END-Generate popup windows
+
+//Close popup windows
+var closepopup = function() {
+    $(".popup").hide(); 
+}
+//-- END-Close popup windows
