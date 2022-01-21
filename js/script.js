@@ -58,7 +58,10 @@ var closeDoor = function(){
 
 //Generate popup windows
 var createpopup = function() {
-    console.log(jsonData);
+    var curdate = new Date();
+    var curmonth = curdate.toLocaleString('en-US', {month: 'long'});
+    var doormonth = event.target.innerText;
+    if(curmonth == doormonth){
     var popup = 
     "<div class=\"popup\">" +
     "<span onclick=\"closepopup()\" class=\"close\">&times;</span>" +
@@ -70,7 +73,8 @@ var createpopup = function() {
     event.target.innerText +
     "</p>" +
     "</div>";
-    $("#popups").append(popup); 
+    $("#popups").append(popup); }
+    
 }
 //-- END-Generate popup windows
 
