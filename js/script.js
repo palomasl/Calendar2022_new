@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
 });
 
+var jsonData;
 
 //Create doors
 document.addEventListener("DOMContentLoaded",
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded",
             $ajaxUtils
                 .sendGetRequest("data/months.json",
                     function(createdoors) {
+                        jsonData = createdoors;
                         var doors = "";
                         for (var i = 0; i < createdoors.months.length; i++) {
                             if (i == 0) {
@@ -56,11 +58,12 @@ var closeDoor = function(){
 
 //Generate popup windows
 var createpopup = function() {
+    console.log(jsonData);
     var popup = 
     "<div class=\"popup\">" +
     "<span onclick=\"closepopup()\" class=\"close\">&times;</span>" +
     "<p>" +
-    "insert message" +
+    retrievemessage(event.target.innerText) +
     "</p>" +
     "<p style=\"font-style: italic; font-size: 8px\">" +
     "Expires end of " +
@@ -76,3 +79,14 @@ var closepopup = function() {
     $(".popup").hide(); 
 }
 //-- END-Close popup windows
+
+//Retrieve month
+var retrievemessage = function(monthName) {
+    for (var i = 0; i < jsonData.months.length; i++) {
+        var monthData = jsonData.months[i];
+        if (monthData.name == monthName) {
+            return jsonData.months[i].message;
+        }
+    }
+}
+//-- END-Retrieve month
