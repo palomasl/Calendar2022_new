@@ -2,40 +2,47 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
 });
 
+//Retrieve JSon data
 var jsonData;
 
-//Create doors
 document.addEventListener("DOMContentLoaded",
         function() {
             $ajaxUtils
                 .sendGetRequest("data/months.json",
-                    function(createdoors) {
-                        jsonData = createdoors;
-                        var doors = "";
-                        for (var i = 0; i < createdoors.months.length; i++) {
-                            if (i == 0) {
-                                doors += "<section class=\"row\">"
-                            }
-                            if (i % 3 == 0 && i != 0) {
-                                doors += "</section>" + "<br>" + "<section class=\"row\">"
-                            }
-                            doors += "<div class=\"col-12 col-sm-4\">" +
-                                "<button onclick=\"createpopup()\" onmouseleave=\"closeDoor()\" style=\"background-image: url('./images/" + createdoors.months[i].image + "'); background-size: cover\">" +
-                                "<div class=\"door\" onmouseenter=\"openDoor()\">" +
-                                "<div class=\"month\">" +
-                                createdoors.months[i].name +
-                                "</div>" +
-                                "</div>" +
-                                "</button>" +
-                                "</div>";
-                            if (i == 11) {
-                                doors += "</section>"
-                            }
-                        }
-                        $("#doors").html(doors);
+                    function(data) {
+                        jsonData = data;
+                        createdoors();
                     })
                 });
+//--END-Retrieve JSon data
+
+//Create doors
+var createdoors = function() {
+    var doors = "";
+    for (var i = 0; i < jsonData.months.length; i++) {
+        if (i == 0) {
+            doors += "<section class=\"row\">"
+        }
+        if (i % 3 == 0 && i != 0) {
+            doors += "</section>" + "<br>" + "<section class=\"row\">"
+        }
+        doors += "<div class=\"col-12 col-sm-4\">" +
+            "<button onclick=\"createpopup()\" onmouseleave=\"closeDoor()\" style=\"background-image: url('./images/" + jsonData.months[i].image + "'); background-size: cover\">" +
+            "<div class=\"door\" onmouseenter=\"openDoor()\">" +
+            "<div class=\"month\">" +
+            jsonData.months[i].name +
+            "</div>" +
+            "</div>" +
+            "</button>" +
+            "</div>";
+        if (i == 11) {
+            doors += "</section>"
+        }
+    }
+    $("#doors").html(doors);
+}
 //-- END-Create doors
+
 
 //Open doors
 var openDoor = function(){
