@@ -79,6 +79,8 @@ var createpopup = function() {
     "Expires end of " +
     event.target.innerText +
     "</p>" +
+    "<input onchange=\"previewFile()\" type=\"file\" id=\"imageInput\" accept=\"image/png, image/jpg\">" +
+    "<img scr=\"\" height=\"200\">" +
     "</div>";
     $("#popups").append(popup); }
     
@@ -91,7 +93,7 @@ var closepopup = function() {
 }
 //-- END-Close popup windows
 
-//Retrieve month
+//Retrieve message
 var retrievemessage = function(monthName) {
     for (var i = 0; i < jsonData.months.length; i++) {
         var monthData = jsonData.months[i];
@@ -100,4 +102,22 @@ var retrievemessage = function(monthName) {
         }
     }
 }
-//-- END-Retrieve month
+//-- END-Retrieve message
+
+//Load image
+
+var previewFile = function(){
+    const preview = document.querySelector('img');
+    const file = document.querySelector('input[type=file]').files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+    // convert image file to base64 string
+    preview.src = reader.result;
+    }, false);
+
+    if (file) {
+    reader.readAsDataURL(file);
+    }
+};
+//-- END-Load image
