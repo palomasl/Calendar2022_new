@@ -68,22 +68,22 @@ var createpopup = function() {
     var curdate = new Date();
     var curmonth = curdate.toLocaleString('en-US', {month: 'long'});
     var doormonth = event.target.innerText;
-    if(curmonth == doormonth){
+    if(curmonth >= doormonth){
     var popup = 
     "<div class=\"popup\">" +
     "<span onclick=\"closepopup()\" class=\"close\">&times;</span>" +
     "<p>" +
     retrievemessage(event.target.innerText) +
     "</p>" +
-    "<p style=\"font-style: italic; font-size: 8px\">" +
+    "<p id=\"expirationMessage\" style=\"font-style: italic; font-size: 8px\">" +
     "Expires end of " +
     event.target.innerText +
     "</p>" +
-    "<input onchange=\"previewFile()\" type=\"file\" id=\"imageInput\" accept=\"image/png, image/jpg\">" +
-    "<img scr=\"\" height=\"200\">" +
     "</div>";
     $("#popups").append(popup); }
-    
+    if(curmonth != doormonth){
+    $("#expirationMessage").replaceWith("<p style=\"font-style: italic; font-size: 10px; color:red\">Expired</p>"); 
+}   
 }
 //-- END-Generate popup windows
 
@@ -103,21 +103,3 @@ var retrievemessage = function(monthName) {
     }
 }
 //-- END-Retrieve message
-
-//Load image
-
-var previewFile = function(){
-    const preview = document.querySelector('img');
-    const file = document.querySelector('input[type=file]').files[0];
-    const reader = new FileReader();
-
-    reader.addEventListener("load", function () {
-    // convert image file to base64 string
-    preview.src = reader.result;
-    }, false);
-
-    if (file) {
-    reader.readAsDataURL(file);
-    }
-};
-//-- END-Load image

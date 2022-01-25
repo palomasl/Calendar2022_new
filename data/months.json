@@ -6,58 +6,58 @@
 		},
 		{
 			"name": "February",
-			"message": "febtext",
-			"image": "test.jpg"
+			"message": "Valid for a 15 minute massage",
+			"image": "massage.jpg"
 		},
 		{
 			"name": "March",
-			"message": "martext",
-			"image": "test.jpg"
+			"message": "Valid for a home baked cake",
+			"image": "cake.jpg"
 		},
 		{
 			"name": "April",
-			"message": "aprtext",
-			"image": "test.jpg"
+			"message": "Valid for any movie you chose at the cinema",
+			"image": "cinema.jpg"
 		},
 		{
 			"name": "May",
-			"message": "maytext",
-			"image": "test.jpg"
+			"message": "Valid for a home-made Indian breakfast",
+			"image": "breakfast.jpg"
 		},
 		{
 			"name": "June",
-			"message": "juntext",
-			"image": "test.jpg"
+			"message": "Valid for a visit to Puy du Fou",
+			"image": "toledo.jpg"
 		},
 		{
 			"name": "July",
-			"message": "jultext",
-			"image": "test.jpg"
+			"message": "Valid for a Yes Day! A day in which I have to say Yes to everything you say",
+			"image": "yes.jpg"
 		},
 		{
 			"name": "August",
-			"message": "augtext",
-			"image": "test.jpg"
+			"message": "Valid for a sexy role play of your choice",
+			"image": "wonderwoman.jpg"
 		},
 		{
 			"name": "September",
-			"message": "septext",
-			"image": "test.jpg"
+			"message": "Birthday month special -> Valid for a write-in coupon",
+			"image": "coupon.jpg"
 		},
 		{
 			"name": "October",
-			"message": "octtext",
-			"image": "test.jpg"
+			"message": "Valid for home cooked meal",
+			"image": "meal.jpg"
 		},
 		{
 			"name": "November",
-			"message": "novtext",
-			"image": "test.jpg"
+			"message": "Valid for a board-game marathon organised by me",
+			"image": "boardgames.jpg"
 		},
 		{
 			"name": "December",
-			"message": "dectext",
-			"image": "test.jpg"
+			"message": "Valid for a bed-time story",
+			"image": "night.jpg"
 		}
 	]
 }

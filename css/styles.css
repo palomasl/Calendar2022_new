@@ -90,8 +90,8 @@ button {
 
 /*Image*/
 #display_image{
-   width: 300px;
-   height: 169px;
+   width: 375px;
+   height: 211px;
    background-position: center;
    background-size: cover;
 }
